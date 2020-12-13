@@ -49,7 +49,7 @@ userSchema.pre('save', async function(done) {
     const hashed = await Password.toHash(this.get('password'));
     this.set('password', hashed);
   }
-  done(new Error(''));
+  done();
 });
 
 userSchema.statics.build = (attrs: UserAttrs) => {
